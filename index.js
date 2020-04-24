@@ -58,4 +58,11 @@ app.get('',
 			resp.status(200).send("{ 'codigo': 'Ok' } ");
 	   });
 
+app.post('', 
+       (req, resp)=> {
+		   console.log("--------------------------------------------------------------------------------");
+              console.log(req);
+			resp.status(200).send('{"speech": "It is turned on", "displayText": "It is turned on"} ');
+	   });
+
 app.listen(port);
