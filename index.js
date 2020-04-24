@@ -12,6 +12,11 @@ restService.use(
 
 restService.use(bodyParser.json());
 
+restService.get("/", (req, res) {
+	res.status(200).send("Uso para estudo e avaliação do reconhecimento de voz. Todos os direitos reservados. O uso desde implica na aceitação dos termos do google.");
+}
+);
+
 restService.post("/echo", function(req, res) {
   var speech =
     req.body.queryResult &&
