@@ -60,8 +60,10 @@ app.get('',
 
 app.post('', 
        (req, resp)=> {
-		   console.log("--------------------------------------------------------------------------------");
-              console.log(req);
+		   console.log("-##------------------------------------------------------------------------------");
+           console.dir(req.body);
+           console.log("--------------------------1");
+
 			resp.status(200).send('{"speech": "It is turned on", "displayText": "It is turned on"} ');
 	   });
 
