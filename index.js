@@ -1,6 +1,16 @@
+const {
+  dialogflow,
+  actionssdk,
+  Image,
+  Table,
+  Carousel,
+} = require('actions-on-google');
+
 const express = require('express');
 
-var port = process.env.PORT || 8080;
+
+
+var port = process.env.PORT || 80;
 const app = express();
 const TOKEN = 'dGVzdGU6MTIz'; // teste 123
 
@@ -59,6 +69,14 @@ app.get('',
 	   });
 
 app.post('/fulfillment', 
+       (req, resp)=> {
+		   console.log("-##------------------------------------------------------------------------------");
+           console.dir(req.body);
+           console.log("--------------------------2");
+
+			resp.status(200).send('{"speech": "It is turned on", "displayText": "It is turned on"} ');
+	   });
+app.post('/', 
        (req, resp)=> {
 		   console.log("-##------------------------------------------------------------------------------");
            console.dir(req.body);
