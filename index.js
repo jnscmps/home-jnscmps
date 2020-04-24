@@ -58,7 +58,7 @@ app.get('',
 			resp.status(200).send("{ 'codigo': 'Ok' } ");
 	   });
 
-app.post('', 
+app.post('/fulfillment', 
        (req, resp)=> {
 		   console.log("-##------------------------------------------------------------------------------");
            console.dir(req.body);
