@@ -2,6 +2,9 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 
+var port = process.env.PORT || 80;
+const app = express();
+
 const restService = express();
 
 restService.use(
@@ -12,7 +15,7 @@ restService.use(
 
 restService.use(bodyParser.json());
 
-app.get('/index.html', 
+app.get('', 
        (req, resp)=> {
                      console.log("/show ");
                      resp.status(200).send("Termo de aceite de licencimento. Todos os direitos reservados. Ao usar esse servico você concorda com os termos de servico do google.");
@@ -225,4 +228,8 @@ restService.post("/slack-test", function(req, res) {
 
 restService.listen(process.env.PORT || 8000, function() {
   console.log("Server up and listening");
+});
+
+app.listen(port, function(){
+	console.log("http Server");
 });
